@@ -1,0 +1,13 @@
+unit UAttributes;
+
+interface
+
+type
+   AttributeWithConstructor = class(TCustomAttribute)
+   public
+     constructor Create(const ADescription: String);
+   end;
+
+implementation
+
+end.

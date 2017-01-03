@@ -1,0 +1,57 @@
+unit UAttributes.Rtti;
+
+interface
+
+type
+  //mover para helper
+  TAttributesInspector<T: class> = class
+  public
+    class function GetAttr<Attr: TCustomAttribute>(): Attr;
+  end;
+
+implementation
+
+uses
+  Rtti;
+//
+//class function TAttributesInspector.DisplayLabelFor(aClass: TClass): string;
+//var
+//  rttiContext: TRttiContext;
+//  rttiType: TRttiType;
+//  attribute: TCustomAttribute;
+//begin
+//  rttiContext := TRttiContext.Create();
+//  try
+//    rttiType := rttiContext.GetType(aClass);
+//    for attribute in rttiType.GetAttributes do
+//      if attribute is TDisplayLabelAttribute then
+//        Exit(TDisplayLabelAttribute(attribute).Text);
+//    Result := '';
+//  finally
+//    rttiContext.Free();
+//  end; // try to recover and return the DisplayLabel
+//end;
+
+
+{ TAttributesInspector }
+
+class function TAttributesInspector<T>.GetAttr<Attr>(): TArray<Attr>;
+var
+  rttiContext: TRttiContext;
+  rttiType: TRttiType;
+  attribute: TCustomAttribute;
+begin
+  rttiContext := TRttiContext.Create();
+  try
+    rttiType := rttiContext.GetType(T);
+    for attribute in rttiType.GetAttributes do
+      if attribute is Attr then
+        Exit (Attr(attribute) );
+    Result := nil;
+  finally
+    rttiContext.Free();
+  end; // try to recover and return the DisplayLabel
+
+end;
+
+end.

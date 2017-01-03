@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BDB232B4-BEE7-496B-898D-33C6763C9376}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ReflexAttrib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Datapar\Componentes\libd21\tmssoftware\businessxe7\demos\xdata\simple_sqlite\SQLiteConsoleServer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ReflexAttrib">
+        <MSBuild Projects="ReflexAttrib.dproj"/>
+    </Target>
+    <Target Name="ReflexAttrib:Clean">
+        <MSBuild Projects="ReflexAttrib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ReflexAttrib:Make">
+        <MSBuild Projects="ReflexAttrib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SQLiteConsoleServer">
+        <MSBuild Projects="C:\Datapar\Componentes\libd21\tmssoftware\businessxe7\demos\xdata\simple_sqlite\SQLiteConsoleServer.dproj"/>
+    </Target>
+    <Target Name="SQLiteConsoleServer:Clean">
+        <MSBuild Projects="C:\Datapar\Componentes\libd21\tmssoftware\businessxe7\demos\xdata\simple_sqlite\SQLiteConsoleServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SQLiteConsoleServer:Make">
+        <MSBuild Projects="C:\Datapar\Componentes\libd21\tmssoftware\businessxe7\demos\xdata\simple_sqlite\SQLiteConsoleServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ReflexAttrib;SQLiteConsoleServer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ReflexAttrib:Clean;SQLiteConsoleServer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ReflexAttrib:Make;SQLiteConsoleServer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

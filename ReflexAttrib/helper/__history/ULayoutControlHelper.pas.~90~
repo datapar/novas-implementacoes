@@ -1,0 +1,132 @@
+unit ULayoutControlHelper;
+
+interface
+
+uses
+  System.Generics.Collections, System.Classes,
+  dxLayoutContainer, dxLayoutControl, Vcl.StdCtrls;
+
+type
+  TLayouControlBuilder = class(TComponent)
+  private
+    FConfigs: TList<TClass>;
+  public
+    constructor Create(AOwner: TdxLayoutControl); reintroduce; virtual;
+    property Configs: TList<TClass> read FConfigs;
+
+    function AddConfig(T: TClass): TLayouControlBuilder;
+    function AddSeparator(): TLayouControlBuilder;
+    function Generate(): TLayouControlBuilder;
+  end;
+
+  TdxLayoutControl_Helper = class helper for TdxLayoutControl
+    function Builder(): TLayouControlBuilder;
+  end;
+
+implementation
+
+
+uses
+  UAttributes, UAttributes.Rtti, Rtti;
+
+{ TLayouControlBuilder }
+
+function TLayouControlBuilder.AddConfig(T: TClass): TLayouControlBuilder;
+begin
+  Result:= Self;
+  Configs.Add(T);
+end;
+
+function TLayouControlBuilder.AddSeparator(): TLayouControlBuilder;
+begin
+  Result:= Self;
+  Configs.Add( TdxLayoutSeparatorItem );
+end;
+
+constructor TLayouControlBuilder.Create(AOwner: TdxLayoutControl);
+begin
+  inherited Create(AOwner);
+  FConfigs:= TList<TClass>.Create();
+end;
+
+
+function TLayouControlBuilder.Generate(): TLayouControlBuilder;
+var
+  layout: TdxLayoutControl;
+  g: TdxCustomLayoutGroup;
+  item: TdxLayoutItem;
+
+  config: TClass;
+  attr: TCustomAttribute;
+  prop: TRttiProperty;
+  rttiType: TRttiType;
+  rttiContext: TRttiContext;
+begin
+  layout:= TdxLayoutControl(Owner);
+  layout.Clear();
+
+
+  //Build classe....
+  //mover para bloco especialista
+  //cria grupo
+  for config in FConfigs do
+  begin
+    if (config.InheritsFrom(TdxCustomLayoutItem)) then
+    begin
+      layout.CreateItem( config )
+    end
+    else
+    //rtti class
+    begin
+
+      rttiContext:= TRttiContext.Create();
+      try
+        rttiType := rttiContext.GetType(config);
+        attr:= nil;
+        for attr in rttiType.GetAttributes() do Break;{first class info}
+
+        {for class}
+          g:= layout.CreateGroup();
+          if Assigned(attr) then
+            g.Caption:= TDisplayLabelAttribute(attr).Text
+          else
+            g.Caption:= config.ClassName;
+          g.Visible:= True;
+          g.Parent:= layout.Items;
+          g.Data:= config.ClassInfo;
+        {/class}
+
+        //propriedades
+        for prop in rttiType.GetProperties() do
+        begin
+          //analisando prop...
+          for attr in prop.GetAttributes() do
+          begin
+            //
+            item:= g.CreateItem(TdxLayoutItem) as TdxLayoutItem;
+            item.Visible:= True;
+            if attr is TDisplayLabelAttribute then
+              TdxLayoutItem(item).Caption:= TDisplayLabelAttribute(attr).Text
+            else
+              TdxLayoutItem(item).Caption:= prop.Name;
+
+            TdxLayoutItem(item).Control:= TEdit.Create(layout);
+          end;
+        end;
+      finally
+        rttiContext.Free();
+      end;
+    end;
+  end;
+
+  Result:= Self;
+end;
+
+{ TdxLayoutControl_Helper }
+
+function TdxLayoutControl_Helper.Builder: TLayouControlBuilder;
+begin
+  Result:= TLayouControlBuilder.Create(Self);
+end;
+
+end.

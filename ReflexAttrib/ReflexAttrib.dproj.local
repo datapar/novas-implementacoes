@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/12/15 15:43:45.000.798,=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2016/12/19 10:28:59.000.752,=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2016/12/19 10:29:26.000.267,C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\UMain.dfm</Transaction>
+    <Transaction>2016/12/19 10:29:26.000.267,C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\UMain.pas</Transaction>
+    <Transaction>2016/12/19 10:29:32.000.222,C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\Project3.dproj=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\ReflexAttrib.dproj</Transaction>
+    <Transaction>2016/12/19 10:33:40.000.413,=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\Unit1.pas</Transaction>
+    <Transaction>2016/12/19 10:34:56.000.779,C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\Unit1.pas=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\model\UConfigGeral.pas</Transaction>
+    <Transaction>2016/12/19 10:35:20.000.490,=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\Unit1.pas</Transaction>
+    <Transaction>2016/12/19 10:35:40.000.427,C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\Unit1.pas=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\attributes\UAttributes.pas</Transaction>
+    <Transaction>2016/12/19 10:47:25.000.956,=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\Unit1.pas</Transaction>
+    <Transaction>2016/12/19 10:47:50.000.863,C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\Unit1.pas=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\attributes\UAttributes.Utils.pas</Transaction>
+    <Transaction>2016/12/19 10:48:02.000.013,C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\attributes\UAttributes.Utils.pas=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\attributes\UAttributes.Rtti.pas</Transaction>
+    <Transaction>2016/12/19 16:39:15.000.461,=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\classes\Generics.Tuples.pas</Transaction>
+    <Transaction>2016/12/20 10:32:49.000.637,C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\classes\Generics.Tuples.pas=</Transaction>
+    <Transaction>2016/12/20 12:11:26.000.238,=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\helper\ULayoutControlHelper.pas</Transaction>
+    <Transaction>2016/12/27 16:24:58.000.146,=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\Unit1.pas</Transaction>
+    <Transaction>2016/12/27 16:25:16.000.970,C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\repo\UCFGGERA.pas=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\Unit1.pas</Transaction>
+    <Transaction>2016/12/27 16:25:41.000.229,C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\model\UCFGGERA.pas=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\repo\UCFGGERA.pas</Transaction>
+    <Transaction>2016/12/27 16:27:25.000.402,=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\repo\Datapar.Context.pas</Transaction>
+    <Transaction>2016/12/27 16:33:16.000.839,C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\model\Geral.Model.pas=C:\Users\alexandre.sepe\Documents\Embarcadero\Studio\Projects\ReflexAttrib\model\UCFGGERA.pas</Transaction>
+  </Transactions>
+</BorlandProject>
